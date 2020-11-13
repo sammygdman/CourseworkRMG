@@ -165,40 +165,40 @@ function frame(timestamp) {
     const context = canvas.getContext('2d');
 
     context.fillStyle = 'blue';
-    context.fillRect(0,0,w,h);
+    context.fillRect(0, 0, w, h);
 
     for (let key of pressedKeys) {
-        if (key == "`") qwertyPlay(50, timestamp, true);
-        if (key == "1") qwertyPlay(51, timestamp, true);
-        if (key == "2") qwertyPlay(52, timestamp, true);
-        if (key == "3") qwertyPlay(53, timestamp, true);
-        if (key == "4") qwertyPlay(54, timestamp, true);
-        if (key == "5") qwertyPlay(55, timestamp, true);
-        if (key == "6") qwertyPlay(56, timestamp, true);
-        if (key == "7") qwertyPlay(57, timestamp, true);
-        if (key == "8") qwertyPlay(58, timestamp, true);
-        if (key == "9") qwertyPlay(59, timestamp, true);
-        if (key == "0") qwertyPlay(60, timestamp, true);
-        if (key == "-") qwertyPlay(61, timestamp, true);
-        if (key == "=") qwertyPlay(62, timestamp, true);
+        if (key == "a") qwertyPlay(50, timestamp, true);
+        if (key == "s") qwertyPlay(51, timestamp, true);
+        if (key == "d") qwertyPlay(52, timestamp, true);
+        if (key == "f") qwertyPlay(53, timestamp, true);
+        if (key == "g") qwertyPlay(54, timestamp, true);
+        if (key == "h") qwertyPlay(55, timestamp, true);
+        if (key == "j") qwertyPlay(56, timestamp, true);
+        if (key == "k") qwertyPlay(57, timestamp, true);
+        if (key == "l") qwertyPlay(58, timestamp, true);
+        if (key == ";") qwertyPlay(59, timestamp, true);
+        if (key == "'") qwertyPlay(60, timestamp, true);
+        if (key == "`") qwertyPlay(61, timestamp, true);
+        if (key == "z") qwertyPlay(62, timestamp, true);
     }
 
     pressedKeys = [];
 
     for (let key of releasedKeys) {
-        if (key == "`") qwertyPlay(50, timestamp, false);
-        if (key == "1") qwertyPlay(51, timestamp, false);
-        if (key == "2") qwertyPlay(52, timestamp, false);
-        if (key == "3") qwertyPlay(53, timestamp, false);
-        if (key == "4") qwertyPlay(54, timestamp, false);
-        if (key == "5") qwertyPlay(55, timestamp, false);
-        if (key == "6") qwertyPlay(56, timestamp, false);
-        if (key == "7") qwertyPlay(57, timestamp, false);
-        if (key == "8") qwertyPlay(58, timestamp, false);
-        if (key == "9") qwertyPlay(59, timestamp, false);
-        if (key == "0") qwertyPlay(60, timestamp, false);
-        if (key == "-") qwertyPlay(61, timestamp, false);
-        if (key == "=") qwertyPlay(62, timestamp, false);
+        if (key == "a") qwertyPlay(50, timestamp, false);
+        if (key == "s") qwertyPlay(51, timestamp, false);
+        if (key == "d") qwertyPlay(52, timestamp, false);
+        if (key == "f") qwertyPlay(53, timestamp, false);
+        if (key == "g") qwertyPlay(54, timestamp, false);
+        if (key == "h") qwertyPlay(55, timestamp, false);
+        if (key == "j") qwertyPlay(56, timestamp, false);
+        if (key == "k") qwertyPlay(57, timestamp, false);
+        if (key == "l") qwertyPlay(58, timestamp, false);
+        if (key == ";") qwertyPlay(59, timestamp, false);
+        if (key == "'") qwertyPlay(60, timestamp, false);
+        if (key == "`") qwertyPlay(61, timestamp, false);
+        if (key == "z") qwertyPlay(62, timestamp, false);
     }
 
     releasedKeys = [];
@@ -274,7 +274,7 @@ function frame(timestamp) {
 
         if (x + length < 0) continue;
 
-        let y = h - e.key.position * 2 * step + step/2;
+        let y = h - e.key.position * 2 * step + step / 2;
 
         if (e.key.sharp) {
             context.fillStyle = 'black';
@@ -288,27 +288,10 @@ function frame(timestamp) {
         context.fillStyle = 'red';
         context.font = '30px Arial';
         context.textAlign = 'left';
-        context.textBaseline  = 'top';
-        context.fillText(e.key.note, x+2, y+2);
+        context.textBaseline = 'top';
+        context.fillText(e.key.note, x + 2, y + 2);
 
     }
 
     window.requestAnimationFrame(frame);
-
 }
-
-<!doctype html>
-
-<html>
-
-<head>
-<title>Web Midi Canvas</title>
-<style> body{ overflow:hidden; margin:0px; } </style>
-<script src="webmidi.js"></script>
-    </head>
-
-    <body onload="pageLoad()">
-    <canvas id="webMidiCanvas" />
-    </body>
-
-    </html>

@@ -1,0 +1,45 @@
+body {
+    background-color: mintcream;
+}
+.button {
+    background-color: purple;
+    border: none;
+    color: mintcream;
+    padding: 15px 75px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px;
+    width: 100%;
+}
+
+.horizontal-center {
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+h1{
+    font-style: oblique;
+    font-size: 48px;
+    color: purple;
+}
+
+h2{
+    font-style: italic;
+}
+
+h3{
+    font-size: 32px;
+    color: purple;
+}
+
