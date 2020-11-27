@@ -1,5 +1,6 @@
 package controllers;
 
+import org.glassfish.jersey.media.multipart.FormDataParam;
 import org.json.simple.JSONObject;
 import server.Main;
 
@@ -18,7 +19,7 @@ public class Track {
     @Path("delete/{TrackID}")
 
 
-    public String trackDelete(@PathParam("TrackID") Integer TrackID){
+    public String trackDelete(@PathParam("TrackID") Integer TrackID) {
         System.out.println("Invoked trackDelete()");
         try {
             PreparedStatement ps = Main.db.prepareStatement("DELETE FROM Tracks WHERE TrackID = ?");
@@ -30,17 +31,18 @@ public class Track {
             return "{\"Error\": \"Unable to delete item, please see server console for more info.\"}";
         }
     }
+
     @GET
     @Path("get/{TrackID}")
 
-    public String trackGet(@PathParam("TrackID") Integer TrackID){
+    public String trackGet(@PathParam("TrackID") Integer TrackID) {
         System.out.println("Invoked Tracks.trackGet() with TrackID " + TrackID);
         try {
             PreparedStatement ps = Main.db.prepareStatement("SELECT Address FROM Tracks WHERE TrackID = ?");
             ps.setInt(1, TrackID);
             ResultSet results = ps.executeQuery();
             JSONObject response = new JSONObject();
-            if (results.next()== true) {
+            if (results.next() == true) {
                 response.put("Track", TrackID);
                 response.put("Address", results.getString(1));
             }
@@ -50,15 +52,13 @@ public class Track {
             return "{\"Error\": \"Unable to get item, please see server console for more info.\"}";
         }
     }
-}
-
 
     @POST
     @Path("update")
     public String updateFood(@FormDataParam("TrackID") Integer TrackID, @FormDataParam("Name") String name, @FormDataParam("Quantity") Integer quantity) {
         try {
-            System.out.println("Invoked Food.updateFood/update id=" + id);
-            PreparedStatement ps = Main.db.prepareStatement("UPDATE Tracks SET Name = ?, Quantity = ? WHERE TrackID = ?");
+            System.out.println("Invoked Food.updateFood/update id=" + id); //fix this error - API methods faulty casuing srver to crash
+          PreparedStatement ps = Main.db.prepareStatement("UPDATE Tracks SET Name = ?, Quantity = ? WHERE TrackID = ?");
             ps.setString(1, name);
             ps.setInt(2, quantity);
             ps.setInt(3, TrackID);
@@ -86,3 +86,4 @@ public class Track {
         }
 
     }
+}

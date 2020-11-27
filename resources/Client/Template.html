@@ -5,8 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/Template.css">
     <title>TechnoPitch/template</title>
+    <script>
+        function openHome(){
+            window.location.href = "/Coursework/resources/Client/Home.html";
+        }
+        function openMain(){
+            window.location.href = "/Coursework/resources/Client/Main.html";
+        }
+        function openHelp(){
+            window.location.href = "/Coursework/resources/Client/Help.html";
+        }
+    </script>
 </head>
 <body>
-
+<div class="nav">
+    <a href="#hub" onclick="openMain()">Hub</a>
+    <a href="#login" onclick="openHome()">Login</a>
+    <a href="#help" onclick="openHelp()">Help</a>
+</div>
 </body>
 </html>

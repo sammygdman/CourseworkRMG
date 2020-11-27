@@ -29,14 +29,22 @@
             }
         })
         }
+
+        function openLogin(){
+            window.location.href = "/Coursework/resources/Client/Main.html";
+        }
+        function openCreate(){
+            window.location.href = "/Coursework/resources/Client/Create.html";
+        }
+
     </script>
 </head>
 <body class="body">
 <h1>Welcome to TechnoPitch</h1>
 <h2>TechnoPitch is a Random music generator</h2><br><br>
 <div class="horizontal-center">
-<button class="button">Create new account</button><br><br>
-<button class ="button">Continue as guest</button><br><br>
+<button onclick="openCreate()" class="button">Create new account</button><br><br>
+<button onclick="openLogin()" class ="button">Continue as guest</button><br><br>
 </div>
 <div class="vertical-center">
     <h3>Login</h3><br>
@@ -46,7 +54,7 @@
         <label for="password">Password:</label><br>
         <input class="input" type="password" id="password" name="password"><br><br>
     </form>
-    <button class="button" onclick='postUserLogin();'>submit</button>
+    <button class="button" onclick="postUserLogin()">submit</button>
 </div>
 </body>
 </html>

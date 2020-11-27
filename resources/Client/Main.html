@@ -5,8 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/Main.css">
     <title>TechnoPitch/main</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        function openHome(){
+            window.location.href = "/Coursework/resources/Client/Home.html";
+        }
+        function openTemplate(){
+            window.location.href = "/Coursework/resources/Client/Template.html";
+        }
+        function openHelp(){
+            window.location.href = "/Coursework/resources/Client/Help.html";
+        }
+    </script>
 </head>
 <body>
-
+<div class="nav">
+    <a href="#login" onclick="openHome()">Login</a>
+    <a href="#editTemplate" onclick="openTemplate()">Edit Template</a>
+    <a href="#help" onclick="openHelp()">Help</a>
+</div>
+<br><br>
+<h2>Template:</h2><br>
+<h4>Key - </h4>
+<h4>Time Signature - </h4>
+<h4>Pitch High - </h4>
+<h4>Pitch Low - </h4>
+<br>
+<button class="button"  type="button">Generate</button>
 </body>
 </html>
