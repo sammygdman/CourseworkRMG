@@ -73,7 +73,7 @@ let noteList = {
     '71': {note: 'B', octave: 5,  frequency: 987.8},
     '72': {note: 'C', octave: 6, frequency: 1047}};
 function openHome(){
-    window.location.href = "../Home.html";
+    window.location.href = "../login.html";
 }
 function openTemplate(){
     window.location.href = "../Template.html";

@@ -55,13 +55,13 @@ public class Track {
 
     @POST
     @Path("update")
-    public String updateFood(@FormDataParam("TrackID") Integer TrackID, @FormDataParam("Name") String name, @FormDataParam("Quantity") Integer quantity) {
+    public String updateTrack(@FormDataParam("TrackID") Integer trackID, @FormDataParam("Name") String name, @FormDataParam("Quantity") Integer quantity) {
         try {
-            System.out.println("Invoked Food.updateFood/update id=" + id); //fix this error - API methods faulty casuing srver to crash
+            System.out.println("Invoked Food.updateFood/update id=" + trackID); //fix this error - API methods faulty casuing srver to crash
           PreparedStatement ps = Main.db.prepareStatement("UPDATE Tracks SET Name = ?, Quantity = ? WHERE TrackID = ?");
             ps.setString(1, name);
             ps.setInt(2, quantity);
-            ps.setInt(3, TrackID);
+            ps.setInt(3, trackID);
             ps.execute();
             return "{\"OK\": \"Food updated\"}";
         } catch (Exception exception) {

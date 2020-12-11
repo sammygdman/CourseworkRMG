@@ -17,7 +17,7 @@ public class User {
     @POST
     @Path("login")
     public String loginUser(@FormDataParam("username") String username, @FormDataParam("password") String password) {
-        System.out.println("Invoked loginUser() on path user/login");
+        System.out.println("Invoked loginUser() on path user/login" + username + "paswrod" + password);
         try {
             PreparedStatement ps1 = Main.db.prepareStatement("SELECT Password FROM Users WHERE Username = ?");
             ps1.setString(1, username);
