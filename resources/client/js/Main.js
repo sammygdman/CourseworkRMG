@@ -76,10 +76,10 @@ function openHome(){
     window.location.href = "../login.html";
 }
 function openTemplate(){
-    window.location.href = "../Template.html";
+    window.location.href = "../template.html";
 }
 function openHelp(){
-    window.location.href = "../Help.html";
+    window.location.href = "../help.html";
 }
 noteList = [];
 function random(numNotes){

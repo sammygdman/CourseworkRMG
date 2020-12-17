@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/Create.css">
+    <title>TechnoPitch/create</title>
+    <script>
+
+function pageLoad(){
+
+}
+function openLogin(){
+    window.location.href = "/client/login.html"
+}
+function newUser(){
+    const userForm = document.getElementById("userForm");
+    const userData = new FormData(userForm);
+
+    fetch('/user/new', {method: 'POST', body: userData}
+    ).then(response => response.json()
+    ).then(responseData => {
+        console.log("adding user")
+
+        if (responseData.hasOwnProperty('ERROR')) {
+            alert(responseData.ERROR)
+
+        } else {
+            Cookies.set("username", responseData.username);
+            Cookies.set("token", responseData.token);
+        }
+    })
+}
+    </script>
+</head>
+<body>
+<div class="nav">
+    <a href="#login" onclick="openLogin()">Login</a>
+</div><br><br>
+<form id="userForm">
+    <label for="username">Enter new Username:</label><br>
+    <input class="input" type="text" id="username" name="username"><br><br><br>
+    <label for="password">Enter new Password:</label><br>
+    <input class="input" type="password" id="password" name="password"><br><br>
+</form>
+<button class="button" id="createButton" onclick="newUser()">submit</button>
+</body>
+</html>

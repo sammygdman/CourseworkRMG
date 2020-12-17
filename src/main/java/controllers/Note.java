@@ -18,15 +18,14 @@ public class Note {
     public String noteGet(@PathParam("NoteID") Integer NoteID) {
         System.out.println("Invoked Notes.noteGet() with NoteID " + NoteID);
         try {
-            PreparedStatement ps = Main.db.prepareStatement("SELECT * FROM Notes WHERE NoteID = ?");
+            PreparedStatement ps = Main.db.prepareStatement("SELECT Frequency FROM Notes WHERE NoteID = ?");
             ps.setInt(1, NoteID);
             ResultSet results = ps.executeQuery();
-            JSONObject response = new JSONObject();
             if (results.next()) {
-                response.put("Note", NoteID);
-                response.put("Data", results.getString(1));
+                JSONObject response = new JSONObject();
+                response.put("Data", results.getFloat(1));
+                return response.toString();
             }
-            return response.toString();
         } catch (Exception exception) {
             System.out.println("Database error: " + exception.getMessage());
             return "{\"Error\": \"Unable to get item, please see server console for more info.\"}";

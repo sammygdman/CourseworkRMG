@@ -15,6 +15,24 @@ import java.util.UUID;
 public class User {
 
     @POST
+    @Path("new")
+    public String userNew(@FormDataParam("Username") String username, @FormDataParam("Password") String password) {
+        System.out.println("Invoked user.userNew()");
+        try {
+            PreparedStatement ps = Main.db.prepareStatement("INSERT INTO Users (Username, Password) VALUES (?, ?)");
+            ps.setString(1, username);
+            ps.setString(2, password);
+            ps.executeUpdate();
+            return "{\"OK\": \"Added user\"}";
+        } catch (Exception exception) {
+            System.out.println("Database error: " + exception.getMessage());
+            return "{\"Error\": \"Unable to create new item, please see server console for more info.\"}";
+        }
+
+    }
+
+
+        @POST
     @Path("login")
     public String loginUser(@FormDataParam("username") String username, @FormDataParam("password") String password) {
         System.out.println("Invoked loginUser() on path user/login" + username + "paswrod" + password);
