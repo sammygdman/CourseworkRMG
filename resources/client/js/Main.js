@@ -117,13 +117,27 @@ function play(){
 
     gain.gain.value = 0.5;
     gain.connect(desk);
-
+    let noteID = 5
     let osc = ac.createOscillator();
-    let note = noteList["frequency"];
-    osc.frequency.value = 150;
-    osc.type = 'square';
-    osc.connect(gain)
-    osc.start();
+    fetch('/note/get/'+ noteID, {method: 'GET'}
+    ).then(response => response.json()
+    ).then(responseData => {
+        console.log("adding user")
+        if (responseData.hasOwnProperty('ERROR')) {
+            alert(responseData.ERROR)
+
+        } else {
+            localStorage.setItem("Frequency", responseData.data);
+            let frequency = responseData.data;
+            osc.frequency.value = frequency;
+            osc.type = 'square';
+            osc.connect(gain)
+            osc.start();
+        }
+    })
+}
+
+
 }
 
 

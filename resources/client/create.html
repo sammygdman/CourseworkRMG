@@ -27,7 +27,6 @@ function newUser(){
 
         } else {
             Cookies.set("username", responseData.username);
-            Cookies.set("token", responseData.token);
         }
     })
 }
@@ -39,9 +38,9 @@ function newUser(){
 </div><br><br>
 <form id="userForm">
     <label for="username">Enter new Username:</label><br>
-    <input class="input" type="text" id="username" name="username"><br><br><br>
+    <input class="input" type="text" id="username" name="Username"><br><br><br>
     <label for="password">Enter new Password:</label><br>
-    <input class="input" type="password" id="password" name="password"><br><br>
+    <input class="input" type="password" id="password" name="Password"><br><br>
 </form>
 <button class="button" id="createButton" onclick="newUser()">submit</button>
 </body>

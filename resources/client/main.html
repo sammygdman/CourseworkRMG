@@ -16,6 +16,19 @@
         function openHelp(){
             window.location.href = "/client/help.html";
         }
+        fetch('/note/get', {method: 'GET', body: }
+        ).then(response => response.json()
+        ).then(responseData => {
+            console.log("fetching frequency")
+
+            if (responseData.hasOwnProperty('ERROR')) {
+                alert(responseData.ERROR)
+
+            } else {
+                Cookies.set("username", responseData.username);
+            }
+        })
+        }
     </script>
 </head>
 <body>
@@ -31,6 +44,6 @@
 <h4>Pitch High - </h4>
 <h4>Pitch Low - </h4>
 <br>
-<button class="button"  type="button">Generate</button>
+<button class="button"  type="button" onclick="play()">Generate</button>
 </body>
 </html>

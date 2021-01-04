@@ -26,8 +26,8 @@ public class Note {
                 response.put("Data", results.getFloat(1));
                 return response.toString();
             }
+            return "{\"Error\": \"Unable to get item, please see server console for more info.\"}";
         } catch (Exception exception) {
-            System.out.println("Database error: " + exception.getMessage());
             return "{\"Error\": \"Unable to get item, please see server console for more info.\"}";
         }
     }
