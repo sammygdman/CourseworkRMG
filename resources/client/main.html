@@ -6,30 +6,6 @@
     <link rel="stylesheet" href="css/Main.css">
     <title>TechnoPitch/main</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script>
-        function openHome(){
-            window.location.href = "/client/login.html";
-        }
-        function openTemplate(){
-            window.location.href = "/client/template.html";
-        }
-        function openHelp(){
-            window.location.href = "/client/help.html";
-        }
-        fetch('/note/get', {method: 'GET', body: }
-        ).then(response => response.json()
-        ).then(responseData => {
-            console.log("fetching frequency")
-
-            if (responseData.hasOwnProperty('ERROR')) {
-                alert(responseData.ERROR)
-
-            } else {
-                Cookies.set("username", responseData.username);
-            }
-        })
-        }
-    </script>
 </head>
 <body>
 <div class="nav">
