@@ -6,7 +6,23 @@
     <link rel="stylesheet" href="css/Help.css">
     <title>TechnoPitch/help</title>
 </head>
+<script>
+    function openHome(){
+        window.location.href = "/client/login.html";
+    }
+    function openMain(){
+        window.location.href = "/client/main.html";
+    }
+    function openHelp(){
+        window.location.href = "/client/help.html";
+    }
+</script>
 <body>
-
+<div class="nav">
+    <a href="#home" onclick="openMain()">Home</a>
+    <a href="#login" onclick="openHome()">Login</a>
+    <a href="#help" onclick="openHelp()">Help</a>
+</div>
+<p>This programme is designed to allow users of all musical knowledge to create their own music and learn exactly how the process of composing music works in order to gain a better understanding of frequency and scales. The music created from this program is done through a javascript coded oscillator, which effectively modifies sine waves. The oscillators require a frequency input which corresponds to a note in a scale. When you pick a key in the main page a random function is carried out which picks a certain number of random notes within that scale and outputs them through your speakers. </p>
 </body>
 </html>

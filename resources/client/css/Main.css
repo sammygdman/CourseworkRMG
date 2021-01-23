@@ -27,15 +27,12 @@ body {
 
 .button {
     margin: 0;
-    position: absolute;
-    left: 50%;
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
+    position: center;
     background-color: purple;
     border: none;
     color: mintcream;
-    padding: 15px 75px;
-    text-align: center;
+    padding: 15px 15px;
+    text-align: left;
     text-decoration: none;
     display: inline-block;
     font-size: 32px;

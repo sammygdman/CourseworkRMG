@@ -6,10 +6,12 @@
     <link rel="stylesheet" href="css/Main.css">
     <title>TechnoPitch/main</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/Main.js">
+    </script>
 </head>
 <body>
 <div class="nav">
-    <a href="#login" onclick="openHome()">Login</a>
+    <a href="#login" onclick="openLogin()">Login</a>
     <a href="#editTemplate" onclick="openTemplate()">Edit Template</a>
     <a href="#help" onclick="openHelp()">Help</a>
 </div>
@@ -20,6 +22,13 @@
 <h4>Pitch High - </h4>
 <h4>Pitch Low - </h4>
 <br>
-<button class="button"  type="button" onclick="play()">Generate</button>
+<form>
+    <label>Enter Note ID for tonic</label><br>
+    <input class="input" type="int" id="tonic" name="tonic"><br><br><br>
+    <label>Enter Note Length</label>
+    <input class="input" type="int" id="noteLength" name="noteLength"><br><br><br>
+</form>
+<button class="button"  type="button" onclick="generator()">Generate</button>
 </body>
 </html>
+
